@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+option go_package = "./munition";  
+
+package munition;
+
+message MunitionRequest {
+    int32 TeamId = 1; 
+    int32 AtCount = 2; 
+    int32 MpCount = 3;
+}
+
+message MunitionResponse {
+    bool Granted = 1; 
+    string Message = 2; 
+}
+
+service Earth {
+    rpc SolicitudeM(MunitionRequest) returns (MunitionResponse);
+}

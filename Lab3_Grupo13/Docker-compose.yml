@@ -1,0 +1,16 @@
+version: '3.8'
+services:
+  earth:
+    build:
+      context: .
+      dockerfile: Dockerfile-earth
+    ports:
+      - "50051:50051"
+    depends_on:
+      - team-client
+
+  team-client:
+    build:
+      context: .
+      dockerfile: Dockerfile-team
+

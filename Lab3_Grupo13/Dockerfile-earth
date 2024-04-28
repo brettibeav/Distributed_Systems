@@ -1,0 +1,11 @@
+FROM golang:1.18
+
+WORKDIR /app
+
+COPY . .
+
+RUN go build -o earth ./earth
+
+EXPOSE 50051
+
+CMD ["./earth"]
